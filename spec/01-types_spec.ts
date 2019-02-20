@@ -122,6 +122,27 @@ It was a drak and stormy night`;
                 expect(firstName).toBe('Jeff');
                 expect(age).toBe(49);
             });
+            it('another oop example', () => {
+
+                interface FormattedName {
+                    fullName: string;
+                    length: number;
+                }
+                // public FormattedName formatName(string first, string last) {...}
+                function formatName(first: string, last: string): FormattedName {
+                    const fullName = `${last}, ${first}`;
+                    return { fullName, length: fullName.length };
+                }
+                const { fullName, length } = formatName('Han', 'Solo'); // destructuring
+                expect(fullName).toBe('Solo, Han');
+                expect(length).toBe(9);
+
+
+                const stuff = ['Jeff', 'Gonzalez', 49];
+                const [firstName, , age] = stuff;
+                expect(firstName).toBe('Jeff');
+                expect(age).toBe(49);
+            });
         });
     });
 });
